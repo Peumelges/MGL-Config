@@ -33,8 +33,10 @@ if [[ -z "$NEW_SERVER" ]]; then
 fi
 
 # Backup the original config file
+# Create the backup directory if it doesn't exist
+mkdir -p "/etc/zabbix/backup-conf"
 TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
-cp "$CONFIG_FILE" "${CONFIG_FILE}.bak.$TIMESTAMP"
+cp "$CONFIG_FILE" "/etc/zabbix/backup-conf/zabbix_proxy.conf.bak.$TIMESTAMP"
 
 # Replace the Hostname= line with the new value using sed
 sed -i "s/^Hostname=.*/Hostname=${NEW_SERVER}/" "$CONFIG_FILE"
@@ -49,7 +51,7 @@ CONFIG_FILE="/etc/zabbix/zabbix_agentd.conf"
 
 # Backup the original config file
 TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
-cp "$CONFIG_FILE" "${CONFIG_FILE}.bak.$TIMESTAMP"
+cp "$CONFIG_FILE" "/etc/zabbix/backup-conf/zabbix_agentd.conf.bak.$TIMESTAMP"
 
 # Replace the Hostname= line with the new value using sed
 sed -i "s/^Hostname=.*/Hostname=${NEW_SERVER}/" "$CONFIG_FILE"
