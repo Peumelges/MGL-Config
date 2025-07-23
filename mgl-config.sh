@@ -68,7 +68,19 @@ while true; do
             ;;
         0)
             clear
-            echo "Exiting MGL Configuration. Goodbye!"
+            echo "Exiting MGL Configuration."
+            echo "--------Rede--------"
+            ifconfig | grep -A2 "eth0:*"
+            echo "--------Hostname_Proxy--------"
+            cat /etc/zabbix/zabbix_proxy.conf | grep "^Hostname="
+            echo "--------Server_Proxy--------"
+            cat /etc/zabbix/zabbix_proxy.conf | grep "^Server="
+             echo "--------Hostname_Proxy--------"
+            cat /etc/zabbix/zabbix_agentd.conf | grep "^Hostname="
+            echo "--------Server_Agent--------"
+            cat /etc/zabbix/zabbix_agentd.conf | grep "^ServerActive="
+            echo "----------------"
+            echo "Goodbye!"
             break
             ;;
         *)
