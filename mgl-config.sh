@@ -75,7 +75,9 @@ while true; do
             cat /etc/zabbix/zabbix_proxy.conf | grep "^Hostname="
             echo "--------Server_Proxy--------"
             cat /etc/zabbix/zabbix_proxy.conf | grep "^Server="
-             echo "--------Hostname_Proxy--------"
+            echo "--------Proxy_PSK--------"
+            cat /etc/zabbix/prxzbx.psk
+            echo "--------Hostname_Agent--------"
             cat /etc/zabbix/zabbix_agentd.conf | grep "^Hostname="
             echo "--------Server_Agent--------"
             cat /etc/zabbix/zabbix_agentd.conf | grep "^ServerActive="
