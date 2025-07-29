@@ -56,14 +56,6 @@ zabbix_proxy_menu() {
             # Run script to set Zabbix proxy credentials
             bash set_zabbix_credentials.sh
             ;;
-        3)
-            # Run script to set Zabbix proxy credentials
-            bash check_zabbix_log.sh
-            ;;
-        4)
-            # Run script to set Zabbix proxy credentials
-            bash install_zabbix.sh
-            ;;            
         0)
             # Do nothing, return to main menu
             ;;
@@ -85,11 +77,13 @@ while true; do
             zabbix_proxy_menu  # Show submenu for Zabbix Proxy
             ;;
         3)
+            # Run script to Check Zabbix proxy
             bash check_zabbix_log.sh
             ;;
         4)
+            # Run script to install Zabbix proxy and agent
             bash install_zabbix.sh
-            ;;
+            ;;            
         0)
             clear
             echo "Exiting MGL Configuration."
