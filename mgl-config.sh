@@ -77,6 +77,8 @@ while true; do
             cat /etc/zabbix/zabbix_proxy.conf | grep "^Server="
             echo "--------Proxy_PSK--------"
             cat /etc/zabbix/prxzbx.psk
+            echo "--------TLSPSKIdentity--------"
+            cat /etc/zabbix/zabbix_proxy.conf | grep "^TLSPSKIdentity="          
             echo "--------Hostname_Agent--------"
             cat /etc/zabbix/zabbix_agentd.conf | grep "^Hostname="
             echo "--------Server_Agent--------"

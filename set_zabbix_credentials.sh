@@ -41,6 +41,9 @@ cp "$CONFIG_FILE" "/etc/zabbix/backup-conf/zabbix_proxy.conf.bak.$TIMESTAMP"
 # Replace the Hostname= line with the new value using sed
 sed -i "s/^Hostname=.*/Hostname=${NEW_SERVER}/" "$CONFIG_FILE"
 
+# Replace the Hostname= line with the new value using sed
+sed -i "s/^TLSPSKIdentity=.*/TLSPSKIdentity=${NEW_SERVER}/" "$CONFIG_FILE"
+
 # Confirm success
 dialog --msgbox "Zabbix proxy server updated to:\n$NEW_SERVER" 7 50
 
