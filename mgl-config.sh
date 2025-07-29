@@ -27,7 +27,7 @@ show_menu() {
            1 "Configure Fixed IP" \
            2 "Set Zabbix Proxy" \
            3 "Check Zabbix Log" \
-           4 "Install zabbix proxy and agent" \   
+           4 "Install zabbix proxy and agent" \
            0 "Exit" 2>menu_choice.txt
 
     choice=$(<menu_choice.txt)
