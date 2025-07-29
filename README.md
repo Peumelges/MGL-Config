@@ -1,4 +1,4 @@
-# Zabbix Proxy Installer for Debian 12
+# Zabbix Proxy configuration for Debian 12
 
 This repository contains an interactive Bash script that automates the installation and initial configuration of **Zabbix Proxy 7.0** using **SQLite3** on **Debian 12** systems.
 
@@ -50,7 +50,11 @@ The script performs the following steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Peumelges/MGL-Config/zabbix-proxy-debian12.git
+   git clone https://github.com/Peumelges/MGL-Config.git
 2. Cd in to the repository:
+   ```bash
+   cd MGL-Config/
+2. Run the main Script:
  ```bash
-   cd zabbix-proxy-debian12
+   sudo bash mgl-config
+
