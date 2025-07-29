@@ -5,6 +5,18 @@
 #              Submenu added under "Set Zabbix Proxy" for:
 #              1. Set Zabbix server
 #              2. Set Zabbix proxy credentials
+#              3. Check zabbix log
+#              4. Install zabbix proxy and agent
+
+
+
+
+# Ensure dialog is installed
+if ! command -v dialog &> /dev/null; then
+    echo "Installing dialog..."
+    sudo apt update && sudo apt install -y dialog
+fi
+
 
 # Function to display the main menu
 show_menu() {
@@ -15,6 +27,7 @@ show_menu() {
            1 "Configure Fixed IP" \
            2 "Set Zabbix Proxy" \
            3 "Check Zabbix Log" \
+           4 "Install zabbix proxy and agent" \           
            0 "Exit" 2>menu_choice.txt
 
     choice=$(<menu_choice.txt)
@@ -43,6 +56,10 @@ zabbix_proxy_menu() {
             # Run script to set Zabbix proxy credentials
             bash set_zabbix_credentials.sh
             ;;
+        3)
+            # Run script to set Zabbix proxy credentials
+            bash check_zabbix_log.sh
+            ;;            
         0)
             # Do nothing, return to main menu
             ;;
