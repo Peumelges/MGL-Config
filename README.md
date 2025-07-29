@@ -51,4 +51,6 @@ The script performs the following steps:
 
    ```bash
    git clone https://github.com/Peumelges/MGL-Config/zabbix-proxy-debian12.git
+2. Cd in to the repository:
+ ```bash
    cd zabbix-proxy-debian12
