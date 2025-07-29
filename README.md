@@ -54,7 +54,7 @@ The script performs the following steps:
 2. Cd in to the repository:
    ```bash
    cd MGL-Config/
-2. Run the main Script:
- ```bash
+3. Run the main Script:
+   ```bash
    sudo bash mgl-config
 
