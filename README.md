@@ -56,5 +56,5 @@ The script performs the following steps:
    cd MGL-Config/
 3. Run the main Script:
    ```bash
-   sudo bash mgl-config
+   sudo bash mgl-config.sh
 
