@@ -59,7 +59,10 @@ zabbix_proxy_menu() {
         3)
             # Run script to set Zabbix proxy credentials
             bash check_zabbix_log.sh
-            ;;            
+            ;;
+        4)
+            # Run script to set Zabbix proxy credentials
+            bash install_zabbix.sh            
         0)
             # Do nothing, return to main menu
             ;;
@@ -82,6 +85,9 @@ while true; do
             ;;
         3)
             bash check_zabbix_log.sh
+            ;;
+        4)
+            bash install_zabbix.sh
             ;;
         0)
             clear

@@ -2,8 +2,8 @@
 
 #!/bin/bash
 
-# File: check_zabbix_log.sh
-# Description: Check Zabbix log.
+# File: install_zabbix.sh
+# Description: Install Zabbix proxy and agent.
 #              
 
 
