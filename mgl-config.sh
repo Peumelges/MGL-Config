@@ -89,7 +89,7 @@ while true; do
             rm -f /tmp/pass.txt
 
             # Check password
-             if [[ "$PASSWORD" == "MySecret123" ]]; then
+             if [[ "$PASSWORD" == "senha" ]]; then
                  bash install_zabbix.sh
             else
                 dialog --msgbox "Incorrect password! Access denied." 6 40
