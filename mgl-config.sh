@@ -81,9 +81,21 @@ while true; do
             bash check_zabbix_log.sh
             ;;
         4)
-            # Run script to install Zabbix proxy and agent
-            bash install_zabbix.sh
-            ;;            
+          # Ask for password before allowing installation
+            dialog --passwordbox "Enter password to install Zabbix proxy and agent:" 8 50 2>/tmp/pass.txt
+             [ $? -ne 0 ] && continue  # User pressed Cancel
+
+             PASSWORD=$(< /tmp/pass.txt)
+            rm -f /tmp/pass.txt
+
+            # Check password
+             if [[ "$PASSWORD" == "MySecret123" ]]; then
+                 bash install_zabbix.sh
+            else
+                dialog --msgbox "Incorrect password! Access denied." 6 40
+             fi
+             ;;
+
         0)
             clear
             echo "Exiting MGL Configuration."
